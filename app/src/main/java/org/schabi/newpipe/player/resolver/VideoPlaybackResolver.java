@@ -93,7 +93,7 @@ public class VideoPlaybackResolver implements PlaybackResolver {
         final int audioIndex =
                 ListHelper.getAudioFormatIndex(context, audioStreamsList, audioTrack);
         final MediaItemTag tag =
-                StreamInfoTag.of(info, videoStreamsList, videoIndex, audioStreamsList, audioIndex);
+                StreamInfoTag.of(info, videoStreamsList, -1, audioStreamsList, audioIndex);
         @Nullable final VideoStream video = tag.getMaybeQuality()
                 .map(MediaItemTag.Quality::getSelectedVideoStream)
                 .orElse(null);
